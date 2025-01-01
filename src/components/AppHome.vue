@@ -5,6 +5,10 @@
         <v-btn class="sound-btn" icon @click="toggleSound">
           <v-icon>{{ soundOn ? 'mdi-volume-high' : 'mdi-volume-off' }}</v-icon>
         </v-btn>
+        <span class="mx-2"></span>
+        <v-btn class="music-btn" icon @click="toggleMusic">
+          <v-icon>{{ musicOn ? 'mdi-music' : 'mdi-music-off' }}</v-icon>
+        </v-btn>
       </v-container>
     </div>
     <div class="container-1">
@@ -44,6 +48,7 @@ import {ref} from 'vue';
 import packageJson from '@/../package.json';
 
 const soundOn = ref(true);
+const musicOn = ref(true);
 const dialogLoginVisible = ref(false);
 const dialogRegisterVisible = ref(false);
 const overlay = ref(false);
@@ -52,6 +57,10 @@ const currentYear = new Date().getFullYear();
 
 const toggleSound = () => {
   soundOn.value = !soundOn.value;
+};
+
+const toggleMusic = () => {
+  musicOn.value = !musicOn.value;
 };
 
 const handleDialogLoginClose = () => {

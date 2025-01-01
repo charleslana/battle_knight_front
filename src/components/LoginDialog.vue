@@ -98,6 +98,8 @@ const rules = {
 
 const v$ = useVuelidate(rules, state);
 
+const router = useRouter();
+
 const emailErrors = computed(() =>
   v$.value.email.$errors.map(e => e.$message) as string[]
 );
@@ -119,10 +121,12 @@ const handleSubmit = async () => {
   try {
     setTimeout(() => {
       emit('loading', false);
-      const isLoginSuccessful = false;
+      const isLoginSuccessful = true;
       if (!isLoginSuccessful) {
         errorMessage.value = 'Erro ao tentar fazer login. Verifique suas credenciais e tente novamente.';
+        return;
       }
+      router.push("/main");
     }, 2000);
   } catch (error) {
     emit('loading', false);
