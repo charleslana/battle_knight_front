@@ -1,7 +1,7 @@
 <template>
   <div class="background-container">
     <app-bar/>
-    <v-container style="height: 100%">
+    <v-container style="height: 100%; overflow: auto">
       <slot/>
     </v-container>
     <bottom-bar/>
