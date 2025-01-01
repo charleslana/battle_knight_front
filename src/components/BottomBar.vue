@@ -45,24 +45,28 @@
 </template>
 
 <script lang="ts" setup>
-import {ref} from 'vue';
-import {useRouter} from 'vue-router';
+import {onMounted, ref} from 'vue';
+import {useRoute, useRouter} from 'vue-router';
 
 const currentTab = ref('main');
 const router = useRouter();
+const route = useRoute();
+
+const tabRoutes: Record<string, string> = {
+  '/main': 'main',
+  '/heroes': 'heroes',
+  '/knight': 'knight',
+  '/guild': 'guild',
+};
 
 const navigateTo = (tab: string) => {
   currentTab.value = tab;
-  if (tab === 'main') {
-    router.push('/main');
-  } else if (tab === 'heroes') {
-    router.push('/heroes');
-  } else if (tab === 'knight') {
-    router.push('/knight');
-  } else if (tab === 'guild') {
-    router.push('/guild');
-  }
+  router.push(`/${tab}`);
 };
+
+onMounted(() => {
+  currentTab.value = tabRoutes[route.path] || 'main';
+});
 </script>
 
 <style scoped>

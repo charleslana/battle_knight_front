@@ -8,9 +8,10 @@
         v-for="(item,i) in items"
         :key="i"
         :src="item.src"
-        class="img-carousel"
+        class="img-carousel cursor-pointer"
         cover
         position="top"
+        @click="() => handleCarousel(i)"
       >
         <div class="d-flex fill-height justify-center align-end">
           <div class="text-h2 text-carousel">
@@ -34,6 +35,10 @@ const items = [
   {src: bgCarousel3, text: 'Arena'},
   {src: bgCarousel4, text: 'Torre'},
 ];
+
+const handleCarousel = (index: number) => {
+  console.log(index);
+}
 </script>
 
 <style scoped>
