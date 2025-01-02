@@ -120,9 +120,9 @@ const handleSubmit = async () => {
   emit('loading', true);
   try {
     setTimeout(() => {
-      emit('loading', false);
       const isLoginSuccessful = true;
       if (!isLoginSuccessful) {
+        emit('loading', false);
         errorMessage.value = 'Erro ao tentar fazer login. Verifique suas credenciais e tente novamente.';
         return;
       }
