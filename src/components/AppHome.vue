@@ -55,7 +55,14 @@ const overlay = ref(false);
 
 const currentYear = new Date().getFullYear();
 
+const router = useRouter();
+
+const goToMain = () => {
+  router.push('/main');
+}
+
 const toggleSound = () => {
+  goToMain();
   soundOn.value = !soundOn.value;
 };
 
