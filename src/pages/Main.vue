@@ -1,25 +1,30 @@
 <template>
   <layout>
-    <div v-for="n in 1" :key="n">
-      <h1>Main</h1>
-    </div>
-    <v-carousel height="300" hide-delimiters>
-      <v-carousel-item
-        v-for="(item,i) in items"
-        :key="i"
-        :src="item.src"
-        class="img-carousel cursor-pointer"
-        cover
-        position="top"
-        @click="() => handleCarousel(i)"
-      >
-        <div class="d-flex fill-height justify-center align-end">
-          <div class="text-h2 text-carousel">
-            {{ item.text }}
+    <template #app-bar>
+      <app-bar/>
+    </template>
+    <template #content>
+      <div v-for="n in 1" :key="n">
+        <h1>Main</h1>
+      </div>
+      <v-carousel height="300" hide-delimiters>
+        <v-carousel-item
+          v-for="(item,i) in items"
+          :key="i"
+          :src="item.src"
+          class="img-carousel cursor-pointer"
+          cover
+          position="top"
+          @click="() => handleCarousel(i)"
+        >
+          <div class="d-flex fill-height justify-center align-end">
+            <div class="text-h2 text-carousel">
+              {{ item.text }}
+            </div>
           </div>
-        </div>
-      </v-carousel-item>
-    </v-carousel>
+        </v-carousel-item>
+      </v-carousel>
+    </template>
   </layout>
 </template>
 

@@ -72,11 +72,13 @@ onMounted(() => {
 <style scoped>
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0 auto;
 }
 
 .footer-btn {
@@ -86,6 +88,8 @@ onMounted(() => {
   text-transform: none;
   color: white;
   padding: 5px;
+  flex-grow: 1;
+  margin: 0 5px;
 }
 
 .footer-btn .icon-text {

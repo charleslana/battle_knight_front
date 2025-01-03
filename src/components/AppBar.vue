@@ -1,7 +1,9 @@
 <template>
   <div class="app-bar">
-    <v-container class="d-flex justify-end">
-      <v-btn icon @click="goToHome">
+    <v-container class="d-flex justify-space-between align-center">
+      <slot name="left">
+      </slot>
+      <v-btn class="ml-auto" icon @click="goToHome">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-container>
@@ -19,6 +21,6 @@ const goToHome = () => {
 <style scoped>
 .app-bar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 </style>
